@@ -1,0 +1,17 @@
+<!-- 体裁が同じところはbase.htmlを作成し、extendsで読み込む-->
+{% extends "base.html" %}
+{% load static %}
+
+{% block main %}
+<h1>ホーム</h1>
+{% if username == "Mantaro" %}
+<h2>マンタローです</h2>
+{% elif username %}
+<!-- username変数を渡す-->
+<h2>{{username}}さんようこそ！！</h2>
+{% else %}
+<h2>匿名さんようこそ！！</h2>
+{% endif %}
+
+<img src="{% static 'splatoon.jpg' %}"/>
+{% endblock %}

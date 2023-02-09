@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block main %}
+<h1> introduce</h1>
+<h2> 実績</h2>
+    <p>{% now "Y年m月d日 H時i分" %}現在までに、{{num_anarchy_match|intcomma }}回マッチに潜りました</p>
+<h2>スキル</h2>
+<ul>
+    <!-- forループでviewで設定した値を表示することが出来る-->
+    {% for item in skills %}
+    <li>{{ item }}</li>
+    {% empty %}
+    <li>何もないよ</li>
+    {% endfor %}
+</ul>
+{% endblock %}

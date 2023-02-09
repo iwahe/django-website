@@ -1,0 +1,1 @@
+web: gunicorn Api_train.wsgi
